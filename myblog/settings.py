@@ -43,6 +43,14 @@ INSTALLED_APPS = [
     'actstream'
 ]
 
+ACTSTREAM_SETTINGS = {
+    'MANAGER': 'community.managers.MyActionManager',
+    'FETCH_RELATIONS': True,
+    'USE_PREFETCH': True,
+    'USE_JSONFIELD': True,
+    'GFK_FETCH_DEPTH': 1,
+}
+
 SITE_ID = 1
 
 MIDDLEWARE = [
@@ -82,8 +90,11 @@ WSGI_APPLICATION = 'myblog.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'db_name',
+        'USER': 'postgres',
+        'PASSWORD': 'burak123',
+        'HOST': 'localhost'
     }
 }
 

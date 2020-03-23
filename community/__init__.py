@@ -1,1 +1,1 @@
-#default_app_config = 'community.apps.CommunityConfig'
+default_app_config = 'community.apps.CommunityConfig'

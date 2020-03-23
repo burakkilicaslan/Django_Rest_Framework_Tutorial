@@ -6,6 +6,8 @@ class CommunityConfig(AppConfig):
     name = 'community'
 
     def ready(self):
-        registry.register(self.get_model('User'))
         registry.register(self.get_model('communities'))
+        registry.register(self.get_model('User'))
+        registry.register(self.get_model('post_type'))
+
 

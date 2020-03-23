@@ -36,3 +36,12 @@ class communities(models.Model):
         self.modification_date = timezone.now()
         self.slug = self.get_slug()
         return super(communities, self).save(*args, **kwargs)
+
+class post_type(models.Model):
+    owner = models.ForeignKey(User, on_delete=models.CASCADE)
+    own_community = models.ForeignKey(communities, on_delete=models.CASCADE)
+    title = models.CharField(max_length=100)
+    description = models.TextField()
+
+
+
