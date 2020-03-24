@@ -1,5 +1,4 @@
 from django.apps import AppConfig
-from actstream import registry
 from django.contrib.auth.models import User
 from community.models import communities
 
