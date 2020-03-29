@@ -1,1 +1,3 @@
-default_app_config = 'community.apps.CommunityAppConfig'
+
+
+default_app_config = 'community.apps.MyAppConfig'

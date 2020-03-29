@@ -27,10 +27,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
 
 INSTALLED_APPS = [
+    'community',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.sites',
@@ -39,17 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'community',
     'actstream'
 ]
 
-ACTSTREAM_SETTINGS = {
-    'MANAGER': 'community.managers.MyActionManager',
-    'FETCH_RELATIONS': True,
-    'USE_PREFETCH': True,
-    'USE_JSONFIELD': True,
-    'GFK_FETCH_DEPTH': 1,
-}
 
 SITE_ID = 1
 
@@ -96,6 +88,14 @@ DATABASES = {
         'PASSWORD': 'burak123',
         'HOST': 'localhost'
     }
+}
+
+ACTSTREAM_SETTINGS = {
+    'MANAGER': 'community.managers.MyActionManager',
+    'FETCH_RELATIONS': True,
+    'USE_PREFETCH': True,
+    'USE_JSONFIELD': True,
+    'GFK_FETCH_DEPTH': 1,
 }
 
 

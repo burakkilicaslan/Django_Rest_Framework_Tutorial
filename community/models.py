@@ -25,7 +25,7 @@ class communities(models.Model):
         number = 1
 
         while communities.objects.filter(slug=unique).exists():
-            unique = '{}-{}'.format(slug,number)
+            unique = '{}-{}'.format(slug, number)
             number += 1
 
         return unique

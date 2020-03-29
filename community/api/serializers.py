@@ -1,6 +1,7 @@
 from rest_framework import serializers
 
-from community.models import communities
+from community.models import communities,post_type
+from actstream import action
 
 
 ### This is serializer method that you can define every field manually.
@@ -29,4 +30,28 @@ class communityserializer(serializers.ModelSerializer):
             'modification_date',
             'image',
             'slug'
+        ]
+
+class post_typeserializer(serializers.ModelSerializer):
+
+    #user = serializers.CharField(max_length=200)
+
+    class Meta:
+        model = post_type
+        fields = [
+            'own_community',
+            'title',
+            'description',
+        ]
+
+
+class actionserializer(serializers.ModelSerializer):
+
+    #user = serializers.CharField(max_length=200)
+
+    class Meta:
+        model = action
+        fields = [
+            'actor_object_id',
+            'target_object_id',
         ]
